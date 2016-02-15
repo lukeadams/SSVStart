@@ -29,7 +29,19 @@ else()
 	include(${CPM_DIR}/CPM.cmake)
 endif()
 
+SET(SSVDepsRoot "https://github.com/lukeadams/")
+CPM_AddModule("SSVCMake"
+	GIT_REPOSITORY "${SSVDepsRoot}SSVCMake"
+	GIT_TAG "cpm")
+SET(CMAKE_MODULE_PATH ${CPM_KV_SOURCEDIR_MAP_SSVCMake}/cmake/modules ${CMAKE_MODULE_PATH})
+include(SSVCMake)
 
+CPM_AddModule("SSVUtils" #Not workign rn
+	GIT_REPOSITORY "${SSVDepsRoot}SSVUtils"
+	GIT_TAG "cpm")
+CPM_AddModule("vrm_pp"
+	GIT_REPOSITORY "${SSVDepsRoot}vrm_pp"
+	GIT_TAG "cpm")
 ## Basic project setup.
 #vrm_cmake_init_project(SSVStart)
 #vrm_cmake_find_extlib(vrm_pp)
