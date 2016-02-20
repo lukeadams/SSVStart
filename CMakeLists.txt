@@ -67,5 +67,5 @@ CPM_AddModule("vrm_pp"
 #
 ## Create header-only install target (automatically glob)
 #vrm_cmake_header_only_install_glob("${SSVSTART_INC_DIR}" "include")
-
+CPM_ExportAdditionalIncludeDir("./include")
 CPM_InitModule(${CPM_MODULE_NAME})
